@@ -10,13 +10,39 @@ sau pentru textul FAM. PHASIANIDAE G. MELEAGRIS SPECI. GALLOPAVO
 se obține fam. PHASIANIDAE gen. MELEAGRIS spe. GALLOPAVO*/
 
 #include <iostream>
+#include <string.h>
 
 using namespace std;
 
 int main()
 {
-    text[100]="FAMIL. PHASIANIDAE GEN. MELEAGRIS SP. GALLOPAVO", s[100]="FAMILIA, GENUL, SPECIA";
+    char text[101]="FAMIL. PHASIANIDAE GEN. MELEAGRIS SP. GALLOPAVO", s[100]="FAMILIA, GENUL, SPECIA", categ[4];
+    char *categorie;
+    char textNou[101]="";
+    categorie=strtok(text,". ");
+    while(categorie!=NULL){
+        if(strstr(s,categorie)){
+            strncpy(categ,strstr(s,categorie),3);
+            for(int i=0;i<3;i++){
+                if(isupper(categ[i])){
+                    categ[i]=tolower(categ[i]);
+                    //cout<<categ[i]<<' ';
+                }
 
+            }
+            strcat(textNou,categ);
+            strcat(textNou,". ");
+
+        }
+        else{
+            strcat(textNou,categorie);
+            strcat(textNou," ");
+        }
+
+        categorie=strtok(NULL,". ");
+    }
+    cout<<endl;
+    cout<<textNou;
     return 0;
 }
 

@@ -353,3 +353,4 @@ MigrationBackup/
 *.filters
 *.cbp
 /subiectul3ex2/subiectul3ex2.layout
+*.depend
