@@ -2,6 +2,8 @@
 
 #include "subiectul3.h";
 
+#include "subiectul3Stiinte.h";
+
 int main()
 {
 
@@ -12,5 +14,9 @@ int main()
 	//solutie1();
 
 	//solutie3();
+
+	//cout << cifraZecilor(122144);
+
+	sol();
    
 }
